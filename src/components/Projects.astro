@@ -1,0 +1,81 @@
+---
+import { TAGS } from '../assets/TAGS'
+const PROJECTS = [
+	{
+		title: 'Planify, administrador de tareas completo',
+		description:
+			'Pagina para manejo y organización de tareas, con autentificación y autorización completa ademas de elementos con drag and drop desarrollada con next.js',
+		link: 'https://github.com/Lucas-Ledesma/Planify',
+		tags: [
+			TAGS.NEXT,
+			TAGS.TAILWIND,
+			TAGS.NEST,
+			TAGS.PRISMA,
+			TAGS.POSTGRESQL,
+		],
+		image: '/projects/planify.webp',
+	},
+	{
+		title:
+			'E-comerce admin, Panel de control para tiendas onlines',
+		description:
+			'Pagina donde administrar los datos de tu tienda online con capacidad de que cada usuario pueda crear su RESTful API',
+		link: 'https://nqp-admin.vercel.app/',
+		tags: [
+			TAGS.NEXT,
+			TAGS.TAILWIND,
+			TAGS.POSTGRESQL,
+			TAGS.PRISMA,
+		],
+		image: '/projects/ecomerce-admin.webp',
+	},
+]
+---
+
+{
+	PROJECTS.map((project) => (
+		<article class='pb-12'>
+			<h3 class='text-2xl font-semibold text-red-300'>
+				{project.title}
+			</h3>
+			<p class='text-lg mb-4 text-pretty'>
+				{project.description}
+			</p>
+			<ul class='flex gap-x-4 pb-2'>
+				{project.tags.map((tag) => (
+					<li>
+						<span
+							class={`flex gap-x-1 p-1.5 rounded-full text-xs ${tag.class}`}>
+							<tag.icon class='size-4' />
+							{tag.name}
+						</span>
+					</li>
+				))}
+			</ul>
+			<img
+				src={project.image}
+				class='rounded shadow-white/20 shadow-2xl'
+				alt={`Captura de pantalla del proyecto ${project.title}`}
+			/>
+			<a
+				href={project.link}
+				class='inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700'>
+				<span class='text-blue-300'>ver mas </span>
+				<svg
+					class='w-3 h-3 ms-2 rtl:rotate-180'
+					aria-hidden='true'
+					xmlns='http://www.w3.org/2000/svg'
+					fill='none'
+					viewBox='0 0 14 10'>
+					<path
+						stroke='currentColor'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						stroke-width='2'
+						d='M1 5h12m0 0L9 1m4 4L9 9'
+					/>
+				</svg>
+			</a>
+		</article>
+	))
+}

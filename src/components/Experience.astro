@@ -1,0 +1,30 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+const EXPERIENCE = [
+	{
+		title: 'Pagina "Nada Que Perder"',
+		description:
+			'Desarrollo y diseño de pagina web para PYMES (Nada Que Perder) Utilizando Next, Prisma, PostgreSQL  Con funcionalidades administrativas, para facilitar el uso al cliente, y logrando destacar sus productos a los usuarios',
+		date: 'Octubre 2023',
+		link: 'https://www.nadaqueperder.com.ar/',
+	},
+	{
+		title: 'Pasantia "INFORMENTAL"',
+		description:
+			'Desarrollo backend para la empresa INFORMENTAL, Utilizando Nest, TypeORM y PostgreSQL. Me encargue de la creación y documentación completa del backEnd logrando una buena comunicación con el forntEnd lo que mejoro nuestra productividad como equipo',
+		date: 'Noviembre 2023',
+		link: '',
+	},
+]
+---
+
+<ol
+	class='relative border-s border-gray-200 dark:border-gray-700'>
+	{
+		EXPERIENCE.map((experience) => (
+			<li class='mb-10 ms-4'>
+				<ExperienceItem {...experience} />
+			</li>
+		))
+	}
+</ol>

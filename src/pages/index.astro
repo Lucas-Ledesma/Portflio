@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Badge from '../components/Badge.astro'
+import Experience from '../components/Experience.astro'
+import Blob from '../components/blob.astro'
+import BriefCase from '../assets/icons/BriefCase.astro'
+import Container from '../components/Container.astro'
+import Code from '../assets/icons/Code.astro'
+import Projects from '../components/Projects.astro'
+---
+
+<Layout title='LucasDev | Portfolio'>
+	<main
+		class='mx-auto max-w-lg sm:max-w-xl gap-24 flex flex-col'>
+		<Blob />
+		<Container
+			class='flex flex-col gap-8 items-center justify-center text-center'>
+			<h1 class='text-5xl font-bold px-10'>
+				Buenas, soy Lucas
+			</h1>
+			<Badge>Disponible para trabajar</Badge>
+			<h2 class='text-xl text-wrap px-10'>
+				<span class='text-violet-300'>
+					Desarrollador web
+				</span>de Argentina, Posadas, Misiones apasionado
+				por crear <span class='text-yellow-200'
+					>soluciones innovadoras.</span
+				>
+				Transformo ideas en experiencias digitales, con un enfoque
+				en la <span class='text-red-400'>eficiencia</span> y
+				la
+				<span class='text-red-400'>creatividad.</span></h2
+			>
+		</Container>
+		<div>
+			<Container id='experience'>
+				<h1 class='text-xl text-wrap pb-4 flex gap-2'
+					>Experiencia laboral <BriefCase
+						class='size-6'
+					/></h1
+				>
+				<Experience />
+			</Container>
+
+			<Container id='projects'>
+				<h1 class='text-xl text-wrap pb-4 flex gap-2'
+					>Proyectos <Code class='size-6' /></h1
+				>
+				<Projects />
+			</Container>
+		</div>
+	</main>
+</Layout>
